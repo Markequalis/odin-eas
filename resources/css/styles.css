@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    font-family: 'Kalnia Glaze';
+}
+
+.board {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid #000;
+    height: 750px;
+    width: 750px;
+}
+
+
+
+.square {
+    background-color: #fff;
+}
