@@ -1,3 +1,3 @@
 # odin-eas
 
-I am currently working on an Etch-a-Sketch project assigned by The Odin Project. This is nowhere close to finished.
+This was a project from The Odin Project's Full-Stack Development course during the Foundations portion. I had lots of fun working out the problems that I was having trying to figure out how to make all the coloring functions work.

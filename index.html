@@ -8,10 +8,27 @@
     <link href="resources/css/styles.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kalnia+Glaze:wght@100..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="board"></div>
+    <header>
+        <h1>Etch-a-Sketch</h1>
+        <p>Color to your heart's content!</p>
+    </header>
+    <div class="color-control">
+        <input
+            type="color"
+            value="#000000"
+            id="color-control"
+        />
+        <button id="rainbow">Rainbow Disabled</button>
+        <button id="resetButton">Reset Board</button>
+        <button id="boardSizeButton">Board Size</button>
+    </div>
+    <div class="board-and-footer">
+        <div id="board"></div>
+        <footer><img src="resources/images/favicon.ico">RynerCorp 2024</footer>
+    </div>
     <script src="resources/js/script.js"></script>
 </body>
 </html>
