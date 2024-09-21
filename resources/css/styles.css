@@ -13,6 +13,7 @@ body {
     justify-content: center;
     align-items: center;
     color: #fff;
+    transform: scale(0.9); /* Shrink the entire page to 90% */
 }
 
 header {
