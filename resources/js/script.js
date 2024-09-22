@@ -1,4 +1,4 @@
-import { toggleRainbowColors, useRandomColors, getRandomColor, hexToRgba, getRandomDarkColor } from './color-helper.js';
+import * as colorHelper from './color-helper.js'
 
 document.addEventListener('DOMContentLoaded', () => { // Added so that the script doesn't load until the page content does.
     const gridContainer = document.getElementById('board');
@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => { // Added so that the scrip
 
     let painting = false;
 
-    rainbowColorBtn.addEventListener('click', () => toggleRainbowColors(rainbowColorBtn));
+    rainbowColorBtn.addEventListener('click', () => colorHelper.toggleRainbowColors(rainbowColorBtn));
 
     boardSizeButton.addEventListener('click', () => {
         const validSizes = [16, 32, 48, 64, 80, 96];
@@ -75,10 +75,10 @@ document.addEventListener('DOMContentLoaded', () => { // Added so that the scrip
         opacity = Math.min(opacity + 0.1, 1); // Increment opacity, max 1
         square.dataset.opacity = opacity;
 
-        if (useRandomColors) {
-            square.style.backgroundColor = getRandomColor(opacity);
+        if (colorHelper.useRandomColors) {
+            square.style.backgroundColor = colorHelper.getRandomColor(opacity);
         } else {
-            square.style.backgroundColor = hexToRgba(colorPicker.value, opacity);
+            square.style.backgroundColor = colorHelper.hexToRgba(colorPicker.value, opacity);
         }
     }
 
@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => { // Added so that the scrip
         function randomizeHeaderColor() { // Function to apply random dark color to the header
             const headerTextElements = document.querySelectorAll('header h1, header p');
             headerTextElements.forEach(element => {
-                element.style.color = getRandomDarkColor();
+                element.style.color = colorHelper.getRandomDarkColor();
             });
         }
         randomizeHeaderColor();
