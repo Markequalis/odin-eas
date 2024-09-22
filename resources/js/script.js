@@ -48,7 +48,9 @@ document.addEventListener('DOMContentLoaded', () => { // Added so that the scrip
             div.addEventListener('mousedown', () => painting = true);
             div.addEventListener('mouseup', () => painting = false);
             div.addEventListener('mousemove', () => {
-                if (painting) paintSquare(div);
+                if (painting && event.buttons === 1) {
+                    paintSquare(div);
+                }
             });
             gridContainer.appendChild(div);
         }
