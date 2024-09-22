@@ -45,15 +45,29 @@ document.addEventListener('DOMContentLoaded', () => { // Added so that the scrip
             div.style.width = `${squareSize}px`;
             div.style.height = `${squareSize}px`;
             div.dataset.opacity = 0; // Initialize opacity
-            div.addEventListener('mousedown', () => painting = true);
-            div.addEventListener('mouseup', () => painting = false);
-            div.addEventListener('mousemove', () => {
-                if (painting && event.buttons === 1) {
+            
+            div.addEventListener('mousedown', function () {
+                painting = true;
+                paintSquare(div);
+            });
+    
+            div.addEventListener('mouseover', function () {
+                if (painting) {
                     paintSquare(div);
                 }
             });
+    
             gridContainer.appendChild(div);
         }
+    
+        // Add mousedown and mouseup event listeners to the document only once
+        document.addEventListener('mousedown', () => {
+            painting = true;
+        });
+    
+        document.addEventListener('mouseup', () => {
+            painting = false;
+        });
     }
 
     function paintSquare(square) {
