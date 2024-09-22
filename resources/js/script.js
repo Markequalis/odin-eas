@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => { // Added so that the scrip
             div.style.width = `${squareSize}px`;
             div.style.height = `${squareSize}px`;
             div.dataset.opacity = 0; // Initialize opacity
-            
+
             div.addEventListener('mousedown', function () {
                 painting = true;
                 paintSquare(div);
@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => { // Added so that the scrip
         square.dataset.opacity = opacity;
 
         if (useRandomColors) {
-            square.style.backgroundColor = getRandomColor();
+            square.style.backgroundColor = getRandomColor(opacity);
         } else {
             square.style.backgroundColor = hexToRgba(colorPicker.value, opacity);
         }

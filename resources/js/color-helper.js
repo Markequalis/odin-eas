@@ -12,13 +12,13 @@ const hexToRgba = (hex, opacity) => {
     return `rgba(${r}, ${g}, ${b}, ${opacity})`;
 };
 
-const getRandomColor = () => {
+const getRandomColor = (opacity = 1) => {
     const letters = '0123456789ABCDEF';
     let color = '#';
     for (let i = 0; i < 6; i++) {
         color += letters[Math.floor(Math.random() * 16)];
     }
-    return color;
+    return hexToRgba(color, opacity);
 };
 
 const getRandomDarkColor = () => {
