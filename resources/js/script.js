@@ -1,4 +1,4 @@
-import { toggleRainbowColors, useRandomColors, hexToRgba, getRandomDarkColor } from './color-helper.js';
+import { toggleRainbowColors, useRandomColors, getRandomColor, hexToRgba, getRandomDarkColor } from './color-helper.js';
 
 document.addEventListener('DOMContentLoaded', () => { // Added so that the script doesn't load until the page content does.
     const gridContainer = document.getElementById('board');
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => { // Added so that the scrip
         square.dataset.opacity = opacity;
 
         if (useRandomColors) {
-            square.style.backgroundColor = getRandomDarkColor();
+            square.style.backgroundColor = getRandomColor();
         } else {
             square.style.backgroundColor = hexToRgba(colorPicker.value, opacity);
         }
@@ -82,7 +82,8 @@ document.addEventListener('DOMContentLoaded', () => { // Added so that the scrip
             });
         }
         randomizeHeaderColor();
+        setInterval(randomizeHeaderColor, 1000)
     }
-
+    generateGrid(16)
     headerColors();
 });
